@@ -10,7 +10,8 @@ dynamicCSS.innerHTML = '.true-validate::after {content: "✓";  }';
 document.head.appendChild(dynamicCSS);
 
 // event listener
-//document.getElementById("registrationForm").addEventListener('submit', submitted);
+document.getElementById("registrationForm").addEventListener('submit', 
+submitted);
 
 function eventSelected(event) {
     if (event.value === 'coding' || event.value === 'quiz') {
@@ -75,4 +76,20 @@ function eventSelected(event) {
         document.getElementById("member5").style.display = "none";
     }
      
+}
+
+function submitted(event) {
+    event.preventDefault();
+    // display success alert for 3 seconds   
+    document.getElementById("alertSuccess").style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+
+    setTimeout(() => {
+        document.getElementById("alertSuccess").style.display = 'none';        
+    }, 3000);
+    // form reset
+    document.getElementById("registrationForm").reset();
+    // Remove pseudo CSS
+    dynamicCSS.innerHTML = dynamicCSS.innerHTML.replace(/content: "✓";/, 'content: ""');
+    
 }

@@ -29,12 +29,13 @@ class PublicController extends Controller
 
     public function register(Request $request)
     {
+	dd($request);
         $participant = new Participants;
         $participant->team = $request->team;
         $participant->school = $request->school;
         $participant->event = $request->event;
         $participant->name1 = $request->name1;
-        $participant->name2 = $request->name;
+        $participant->name2 = $request->name2;
         $participant->name3 = $request->name3;
         $participant->name4 = $request->name4;
         $participant->name5 = $request->name5;

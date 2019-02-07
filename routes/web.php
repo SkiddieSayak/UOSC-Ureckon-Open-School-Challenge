@@ -14,9 +14,8 @@
 Route::get('/','PublicController@home');
 Route::get('/contact', 'PublicController@contact');
 Route::get('/about', 'PublicController@about');
-Route::post('/register', 'PublicController@register');
+Route::post('/registers', 'PublicController@register');
 Route::get('/register', 'PublicController@showForm');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -58,8 +58,8 @@
       <h5>Details submitted successfully</h5>
       </div>
       <!-- Start of form -->
-      <form method="POST" id="registrationForm" action='/register' class="contact100-form validate-form">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <form method="POST" id="registrationForm" action='/registers' class="contact100-form validate-form">
+          @csrf
           <h5 class="mb-4 ml-2">Basic Details&#58;</h5>
         <div class="form-group wrap-input100 validate-input bg1" data-validate="Please Enter Team Name">
           <label class="label-input100">Team Name</label>
